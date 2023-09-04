@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Make It Rain</string>
+    <string name="you_have">You have 😎</string>
+    <string name="make_it_rain">Make it Rain</string>
+    <string name="show_info">show info</string>
+    <string name="amount_value">$0</string>
+    <string name="snack_info">You are out of the matrix.</string>
+</resources>
