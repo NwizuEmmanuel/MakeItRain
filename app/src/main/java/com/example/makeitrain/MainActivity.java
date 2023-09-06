@@ -1,5 +1,6 @@
 package com.example.makeitrain;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,10 +31,21 @@ public class MainActivity extends AppCompatActivity {
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
         amount += 1000;
         moneyValue.setText(numberFormat.format(amount));
-        Log.d("MainActivity", "showMoney: $200k");
+        if (amount == 20000) {
+            moneyValue.setTextColor(Color.rgb(0, 0, 225));
+            Snackbar.make(constraintLayout, R.string.threshold_message, Snackbar.LENGTH_LONG).show();
+        }else {
+            moneyValue.setTextColor(Color.BLACK);
+        }
+
+        Log.d("MainActivity", "increased amount to " + amount);
     }
 
-    public void showInfo(View view){
-        Snackbar.make(constraintLayout, R.string.snack_info, Snackbar.LENGTH_LONG).show();
+    public void showInfo(View view) {
+        if (amount == 0) {
+            Snackbar.make(constraintLayout, R.string.zero_amount_message, Snackbar.LENGTH_LONG).show();
+        } else {
+            Snackbar.make(constraintLayout, R.string.snack_info, Snackbar.LENGTH_LONG).show();
+        }
     }
 }
