@@ -1,6 +1,5 @@
 package com.example.makeitrain;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         amount += 1000;
         moneyValue.setText(numberFormat.format(amount));
         if (amount == 20000) {
-            moneyValue.setTextColor(Color.rgb(0, 0, 225));
+            moneyValue.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.purple));
             Snackbar.make(constraintLayout, R.string.threshold_message, Snackbar.LENGTH_LONG).show();
         }else {
-            moneyValue.setTextColor(Color.BLACK);
+            moneyValue.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.black));
         }
 
         Log.d("MainActivity", "increased amount to " + amount);
